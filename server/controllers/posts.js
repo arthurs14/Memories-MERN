@@ -26,5 +26,5 @@ export const createPost = async (req, res) => {
   } catch (error) {
     res.status(409).json({ message: error });
   }
-  res.send('Post Creation');
+  //res.send('Post Creation');
 };
