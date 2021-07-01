@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 import App from './App';
 
-// gets the index
+// gets the index file
 import reducers from './reducers';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
