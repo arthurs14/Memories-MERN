@@ -4,8 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import reducers from './store/reducers';
 import App from './App';
+
+// gets the index
+import reducers from './reducers';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
