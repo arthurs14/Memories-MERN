@@ -7,6 +7,8 @@ import Home from './components/Home/Home';
 import Auth from './components/Auth/Auth';
 
 const App = () => {
+  const user = JSON.parse(localStorage.getItem('profile'));
+
   return (
     <Router>
       <Container maxwidth='xl'>
@@ -16,7 +18,7 @@ const App = () => {
           <Route exact path="/posts" component={Home} />
           <Route exact path="/posts/search" component={Home} />
           <Route path="/posts/:id" component={PostDetails} />
-          <Route exact path="/auth" component={Auth} />
+          <Route exact path="/auth" component={() => (!user ? <Auth /> : <Redirect to="/posts" />)} />
         </Switch>
       </Container>
     </Router>
